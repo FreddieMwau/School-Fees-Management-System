@@ -1,0 +1,43 @@
+<!-- <p>body-component works!</p> -->
+
+<div class="container">
+    <div class="input-container">
+        <div class="title">
+            <p>Add a student</p>
+        </div>
+        <p [ngStyle]="{color:'forestgreen'}">{{successMsg}}</p>
+
+        <div class="input-form">
+            <form class="form">
+                <label for="studentName">Student Name</label>
+                <input #studentNameInput name="studentName" type="text" placeholder="Student name">
+                <p [ngStyle]="{color:'red'}">{{errorMsg}}</p>
+                <label for="studentBalance">Student Balance</label>
+                <input type="number" name="studentBalance" placeholder="Ksh 0" #studentBalanceInput>
+                <input type="submit" (click)="addStudent(studentNameInput.value, +studentBalanceInput.value)" class="submitBtn">
+            </form>
+        </div>
+    </div>
+
+    <div class="display-container">
+        <div class="header-container">
+            <p>Student Name</p>
+            <p>Balance</p>
+        </div>
+
+        <div class="buttons-container">
+            <button (click)="showAllStudents()">Get All Students</button>
+            <button (click)="studentsWithBalance()">Get Students With Balance</button>
+            <button (click)="studentsWithoutBalance()">Get Students Without Balance</button>
+        </div>
+
+        <div class="output-container">
+            <p id="noResults" *ngIf="students.length == 0">No Students !!!</p>
+
+            <div class="result" *ngFor="let student of newStudents">
+                <p>{{student.name | uppercase}}</p>
+                <p [ngStyle]="{color : student.feeBalance <= 0 ? 'green' : 'red'}">{{student.feeBalance}}</p>
+            </div>
+        </div>
+    </div>
+</div>

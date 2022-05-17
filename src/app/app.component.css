@@ -1,0 +1,12 @@
+app-footer-component{
+    margin-top: auto;
+}
+
+app-nav-component{
+    margin-bottom: auto;
+}
+
+app-body-component{
+    display: flex;
+    justify-content: center;
+}

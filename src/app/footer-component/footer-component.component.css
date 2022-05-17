@@ -1,0 +1,27 @@
+.footer-container{
+    background-color: chocolate;
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly ;
+}
+
+.footer-container p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    color: white;
+    margin-top: 10px;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    width: 13rem;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.footer img{
+    height: 27px;
+    width: 27px;
+    margin-top: 10px;
+}
