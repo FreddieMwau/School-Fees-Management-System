@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { retry } from 'rxjs';
 
 @Component({
   selector: 'app-body-component',
@@ -8,24 +7,34 @@ import { retry } from 'rxjs';
 })
 export class BodyComponentComponent {
 
-  public students: {name: string, feeBalance:number}[]= []
-  public newStudents: { name: string, feeBalance: number }[] = []
-  public errorMsg: string = ''
-  public successMsg:string =''
+  students: {name: string, feeBalance:number}[]= []
+  newStudents: { name: string, feeBalance: number }[] = this.students
+  errorMsg: string = ''
+  successMsg:string =''
+  nameInput= <HTMLInputElement>  document.getElementById('nameInput')
+  balanceInput: HTMLInputElement | null = null;
+
 
   constructor() { }
 
-  addStudent(name:string, feeBalance:number){
-    if (name === ''){
+  addStudent(name:string, feeBalance:number){  
+    if (!name.trim()){
       this.errorMsg = 'Please fill the student name'
       setTimeout(() => {
         this.errorMsg=''
       }, 3500)
-    } else {
+    } else if (this.students.find((student) => student.name === name)){
+      this.errorMsg = 'Student with this name already exists'
+      setTimeout(() => {
+        this.errorMsg=''
+      }, 3500)
+    }else {
       this.students.push({name, feeBalance})
       this.successMsg = 'Entry added successfully'
+      // this.nameInput.value=''
       setTimeout(()=> {
         this.successMsg=''
+        name=''
       }, 3500)
     }
   }

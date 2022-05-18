@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { NavComponentComponent } from './nav-component/nav-component.component';
 import { BodyComponentComponent } from './body-component/body-component.component';
 import { FooterComponentComponent } from './footer-component/footer-component.component';
+import { FormsModule } from '@angular/forms';
+import { SortPipe } from './sort.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponentComponent,
     BodyComponentComponent,
-    FooterComponentComponent
+    FooterComponentComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
