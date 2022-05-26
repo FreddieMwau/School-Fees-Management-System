@@ -8,6 +8,13 @@ import { BodyComponentComponent } from './body-component/body-component.componen
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { FormsModule } from '@angular/forms';
 import { SortPipe } from './sort.pipe';
+import { HomeComponentComponent } from './home-component/home-component.component';
+import { AddStudentComponentComponent } from './add-student-component/add-student-component.component';
+import { GetAllStudentComponentComponent } from './get-all-student-component/get-all-student-component.component';
+import { BalanceComponentComponent } from './balance-component/balance-component.component';
+import { ClearedComponentComponent } from './cleared-component/cleared-component.component';
+import { StudentComponentComponent } from './get-all-student-component/student-component/student-component.component';
+import { EditStudentComponentComponent } from './get-all-student-component/edit-student-component/edit-student-component.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +22,14 @@ import { SortPipe } from './sort.pipe';
     NavComponentComponent,
     BodyComponentComponent,
     FooterComponentComponent,
-    SortPipe
+    SortPipe,
+    HomeComponentComponent,
+    AddStudentComponentComponent,
+    GetAllStudentComponentComponent,
+    BalanceComponentComponent,
+    ClearedComponentComponent,
+    StudentComponentComponent,
+    EditStudentComponentComponent,
   ],
   imports: [
     BrowserModule,

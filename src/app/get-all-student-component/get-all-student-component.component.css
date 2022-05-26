@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+}
+
+.leftPanel{
+    border-right: 2px solid chocolate;
+    height: 45rem;
+    padding: 5px;
+    width: 20rem;
+}
+
+h4{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 19px;
+    color: dimgray;
+}
+
+.studentName{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+.studentlist{
+    border-bottom: 1px solid dimgray;
+    width: 90%;
+    padding: 5px;
+    margin-top: 20px;
+}

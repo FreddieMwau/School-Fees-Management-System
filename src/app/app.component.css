@@ -3,10 +3,10 @@ app-footer-component{
 }
 
 app-nav-component{
-    margin-bottom: auto;
+    /* margin-bottom: auto; */
 }
 
-app-body-component{
+router-outlet{
     display: flex;
     justify-content: center;
 }
