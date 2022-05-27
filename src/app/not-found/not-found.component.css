@@ -1,0 +1,12 @@
+.lottie-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+ng-lottie{
+    border-radius: 8px;
+    width: 30rem;
+    height: 30rem;
+}

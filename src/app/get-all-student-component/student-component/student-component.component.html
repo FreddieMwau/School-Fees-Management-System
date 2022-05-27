@@ -1,1 +1,25 @@
-<p>student-component works!</p>
+<div *ngIf="student">
+    <div class="container">
+        <div class="left">
+            <div class="lottie-container">
+                <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+            </div>
+            <!-- <img src="../../../assets/images/student.png" alt=""> -->
+        </div>
+        <div class="right">
+            <label>Student Info</label>
+            <h3>{{student.name}}</h3>
+            <p>{{student.email}}</p>
+            <p>{{student.phoneNo}}</p>
+            <p>{{student.school}}</p>
+            <p>{{student.course}}</p>
+            <p>{{student.balance}}</p>
+
+            <div class="buttons">
+                <button (click)="editBalance()">Update Fee Balance</button>
+                <button (click)="deleteStudent()">Delete</button>
+            </div>
+        </div>
+    </div>
+
+</div>

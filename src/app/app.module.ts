@@ -15,7 +15,13 @@ import { BalanceComponentComponent } from './balance-component/balance-component
 import { ClearedComponentComponent } from './cleared-component/cleared-component.component';
 import { StudentComponentComponent } from './get-all-student-component/student-component/student-component.component';
 import { EditStudentComponentComponent } from './get-all-student-component/edit-student-component/edit-student-component.component';
+import { CommonModule } from '@angular/common';
+import { LottieModule } from 'ngx-lottie';
+import { NotFoundComponent } from './not-found/not-found.component';
 
+export function playerFactory(){
+  return import('lottie-web');
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,11 +36,14 @@ import { EditStudentComponentComponent } from './get-all-student-component/edit-
     ClearedComponentComponent,
     StudentComponentComponent,
     EditStudentComponentComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+    [LottieModule.forRoot({player: playerFactory})]
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,13 +5,18 @@
 .leftPanel{
     border-right: 2px solid chocolate;
     height: 45rem;
+    display: flex;
+    flex-direction: column;
     padding: 5px;
     width: 20rem;
+    gap: 5px;
 }
 
 h4{
     font-family: 'Courier New', Courier, monospace;
     font-size: 19px;
+    margin-top: 15px;
+    margin-left: 10px;
     color: dimgray;
 }
 
@@ -20,14 +25,19 @@ h4{
     font-size: 16px;
     text-align: center;
     margin-bottom: 5px;
-    margin-left: 20px;
+    padding: 5px 15px;
     cursor: pointer;
     color: black;
+    text-decoration: none;
+    border-bottom: 1px solid dimgray;
+    border-radius: 2px;
+    width: 95%;
+    margin-top: 20px;
+    /* margin-left: 20px; */
+    /* width: 200px; */
 }
 
-.studentlist{
-    border-bottom: 1px solid dimgray;
-    width: 90%;
-    padding: 5px;
-    margin-top: 20px;
+.selected{
+    background-color: chocolate;
+    color: white;
 }
