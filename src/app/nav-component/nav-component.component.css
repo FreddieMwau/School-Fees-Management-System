@@ -55,3 +55,20 @@ a{
 .link-selected {
     color: white;
 }
+
+.btn{
+    margin-top: 14px;
+    border: none;
+    width: 75px;
+    font-family: 'Courier New', Courier, monospace;
+    color: dimgray;
+    cursor: pointer;
+    border-radius: 6px;
+    background-color: wheat;
+    font-weight: 600;
+    padding: 4px;
+}
+
+.btn:hover{
+    color: red;
+}

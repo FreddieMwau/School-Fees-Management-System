@@ -1,1 +1,20 @@
-<p>cleared-component works!</p>
+<div class="container">
+
+    <div class="lottie-container">
+        <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+    </div>
+    <h3>Students with Cleared balances</h3>
+    <div class="table-header">
+        <span>Student name</span>
+        <span>Course</span>
+        <span>Amount</span>
+    </div>
+
+    <div>
+        <div class="table-content" *ngFor="let student of students">
+            <span class="content">{{student.name}}</span>
+            <span class="content">{{student.course}}</span>
+            <span class="content fee-balance">Ksh {{student.balance}}</span>
+        </div>
+    </div>
+</div>

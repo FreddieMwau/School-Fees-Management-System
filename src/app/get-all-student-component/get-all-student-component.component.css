@@ -1,5 +1,6 @@
 .container{
     display: flex;
+    background-color: whitesmoke;
 }
 
 .leftPanel{
@@ -8,7 +9,7 @@
     display: flex;
     flex-direction: column;
     padding: 5px;
-    width: 20rem;
+    width: 23rem;
     gap: 5px;
 }
 
@@ -31,10 +32,9 @@ h4{
     text-decoration: none;
     border-bottom: 1px solid dimgray;
     border-radius: 2px;
-    width: 95%;
+    width: 85%;
     margin-top: 20px;
-    /* margin-left: 20px; */
-    /* width: 200px; */
+    margin-left: 20px;
 }
 
 .selected{

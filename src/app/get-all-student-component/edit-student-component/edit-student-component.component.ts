@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { AnimationItem } from 'lottie-web';
+import { AnimationOptions } from 'ngx-lottie';
 import { Student } from 'src/app/interfaces/model';
 import { StudentService } from 'src/app/services/services.service';
 
@@ -27,7 +29,17 @@ export class EditStudentComponentComponent implements OnInit {
     })
   }
 
+  options: AnimationOptions = {
+    path: '/assets/lottie/edit.json'
+  }
+
+  animationCreated(animationItem: AnimationItem): void{
+    console.log(animationItem);
+    
+  }
+
   editBalance(){
+    this.router.navigate(['balances'])
   }
 
 }

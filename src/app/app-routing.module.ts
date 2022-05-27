@@ -8,16 +8,20 @@ import { GetAllStudentComponentComponent } from './get-all-student-component/get
 import { StudentComponentComponent } from './get-all-student-component/student-component/student-component.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { authGuard } from './services/auth-guard.service';
 
 const routes: Routes = [
   {path: '', component: HomeComponentComponent},
-  {path:'addStudent', component: AddStudentComponentComponent},
-  {path: 'students', component: GetAllStudentComponentComponent, children: [
-    { path: ':id', component: StudentComponentComponent },
-    { path: ':id/edit', component: EditStudentComponentComponent },
-  ]},
-  {path: 'balances', component:BalanceComponentComponent},
-  {path: 'cleared', component:ClearedComponentComponent},
+  {path:'addStudent', canActivate: [authGuard], component: AddStudentComponentComponent},
+  {path: 'students', 
+    canActivate: [authGuard], 
+    component: GetAllStudentComponentComponent, 
+    children: [
+      { path: ':id', canActivateChild: [authGuard] , component: StudentComponentComponent },
+      { path: ':id/edit', canActivateChild: [authGuard], component: EditStudentComponentComponent },
+    ]},
+  { path: 'balances', canActivate: [authGuard], component:BalanceComponentComponent},
+  { path: 'cleared', canActivate: [authGuard], component:ClearedComponentComponent},
   { path: 'notfound', component: NotFoundComponent },
   { path: '**', redirectTo:'notfound' }
 ];

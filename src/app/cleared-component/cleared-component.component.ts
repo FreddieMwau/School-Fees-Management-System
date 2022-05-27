@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimationItem } from 'lottie-web';
+import { AnimationOptions } from 'ngx-lottie';
+import { Student } from '../interfaces/model';
+import { StudentService } from '../services/services.service';
 
 @Component({
   selector: 'app-cleared-component',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClearedComponentComponent implements OnInit {
 
-  constructor() { }
+  students: Student[] = []
+  constructor(private studentService:StudentService) { }
 
   ngOnInit(): void {
+    this.students = this.studentService.getStudentsWithoutBalance()
+  }
+
+  options: AnimationOptions = {
+    path: '/assets/lottie/completed.json'
+  }
+
+  animationCreated(animationItem: AnimationItem): void {
+    console.log(animationItem);
   }
 
 }

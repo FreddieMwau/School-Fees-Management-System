@@ -6,13 +6,13 @@ import { v4 as uid } from "uuid";
   providedIn: 'root'
 })
 export class StudentService {
-  private students:Student[]=[
+  private students: Student[] = [
     {
       id: '1f9f3152-d141-4b46-a791-c3e25fd31f0e',
       name: 'Jackson Ndolo',
       email: 'ndolo@jackson.com',
       phoneNo: 78799808880,
-      balance: 9212,
+      balance: 0,
       school: 'Mwisho wa Mawazo Primary School',
       course: 'UnderGraduate in Character Development with Information Technology '
     },
@@ -31,7 +31,7 @@ export class StudentService {
       name: 'Jackson Ndolo',
       email: 'ndolo@jackson.com',
       phoneNo: 78799808880,
-      balance: 9212,
+      balance: -2000,
       school: 'Mwisho wa Mawazo Primary School',
       course: 'UnderGraduate in Character Development with Information Technology '
 
@@ -49,43 +49,37 @@ export class StudentService {
   ]
   constructor() { }
 
-  addStudent(name:string, email:string, phoneNo:number, school:string, course:string){
+  addStudent(name: string, email: string, phoneNo: number, school: string, course: string) {
     this.students.push({
-      id:uid(),
+      id: uid(),
       name, email, phoneNo, school, course
     })
   }
 
-  getAllStudents(){
+  getAllStudents() {
     return this.students;
   }
 
-  getStudent(id:string){
+  getStudent(id: string) {
     return this.students.find(student => student.id === id)
   }
 
-  getStudentsWithBalance(){
-    return this.students.find(student => {
-      if (student.balance) return true
-      return false
-    })
+  getStudentsWithBalance() {
+    return this.students.filter(student => student.balance! > 0)
   }
 
-  getStudentsWithoutBalance(){
-    return this.students.find(student => {
-      if (student.balance) return false
-      return true
-    })
+  getStudentsWithoutBalance() {
+    return this.students.filter(student => student.balance! <= 0)
   }
 
-  deleteStudent(id:string){
+  deleteStudent(id: string) {
     const index = this.students.findIndex(student => student.id === id)
     return this.students.splice(index, 1)
   }
 
-  updateStudentFee(id:string, newBalance:number){
+  updateStudentFee(id: string, newBalance: number) {
     const student = this.getStudent(id)
-    if(student){
+    if (student) {
       student.balance = newBalance
     }
   }

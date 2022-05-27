@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    background-color: whitesmoke;
+    width: 70vw;
+    justify-content: center;
+}
+.card-design {
+    margin-top: 50px;
+    border: 3px solid chocolate;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.lottie-container {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 9px;
+    border: 1px solid dimgray;
+    margin-left: 180px;
+    margin-bottom: 10px;
+    margin-right: 180px;
+    margin-top: 25px;
+}
+
+.values {
+    /* border: 1px solid magenta; */
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 22rem;
+    margin-left: 35px;
+    margin-right: 35px;
+}
+
+label {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: gray;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+h3 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.btn {
+    width: 170px;
+    padding: 9px;
+    margin-top: 15px;
+    margin-right: 100px;
+    margin-left: 100px;
+    background-color: chocolate;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    font-weight: 600;
+
+    color: wheat;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    color: white;
+}
+
+.txt {
+    padding: 8px;
+    width: 320px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+}

@@ -36,6 +36,7 @@ export class StudentComponentComponent implements OnInit {
     this.router.navigate(['edit'], {relativeTo: this.route})
   }
 
-  deleteStudent(){}
+  deleteStudent(){
+  }
 
 }
