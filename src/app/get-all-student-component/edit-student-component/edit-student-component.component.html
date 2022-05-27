@@ -9,9 +9,9 @@
                 <p [style]="{color:'red'}">Use figures between 0-9</p>
             </div>
             <label class="balance">Fee Balance</label>
-            <input [(ngModel)]="studentBalance" type="number" class="txt">
+            <input #studentBalance type="number" class="txt">
             
-            <button (click)="editBalance()" class="btn">Update Balance</button>
+            <button (click)="editBalance(studentBalance.value)" class="btn">Update Balance</button>
         </div>
     </div>
 </div>

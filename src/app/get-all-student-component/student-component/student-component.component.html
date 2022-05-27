@@ -8,28 +8,28 @@
                 <label>Student Info</label>
                 <div class="layout">
                     <img src="../../../assets/images/name.png" alt="">
-                    <h3>{{student.name}}</h3>
+                    <h3>{{student.studentName}}</h3>
                 </div>
                 <div class="layout">
                     <img src="../../../assets/images/mail.png" alt="">
-                    <p>{{student.email}}</p>
+                    <p>{{student.contactInfo.studentEmail}}</p>
                 </div>
                 <div class="layout">
                     <img src="../../../assets/images/phone.png" alt="">
-                    <p>{{student.phoneNo}}</p>
+                    <p>{{student.contactInfo.studentPhoneNumber}}</p>
                 </div>
                 <div class="layout">
                     <img src="../../../assets/images/schools.png" alt="">
-                    <p>{{student.school}}</p>
+                    <p>{{student.studentSchool}}</p>
                 </div>
                 <div class="layout">
                     <img src="../../../assets/images/course.png" alt="">
-                    <p>{{student.course}}</p>
+                    <p>{{student.studentCourse}}</p>
                 </div>
             
                 <div class="buttons">
                     <button class="btn" (click)="editBalance()">Update Fee Balance</button>
-                    <button class="btn" (click)="deleteStudent()">Delete</button>
+                    <button class="btn" (click)="deleteStudent(student.regNo)">Delete</button>
                 </div>
             </div>
         </div>

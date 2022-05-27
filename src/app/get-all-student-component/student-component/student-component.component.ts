@@ -36,7 +36,12 @@ export class StudentComponentComponent implements OnInit {
     this.router.navigate(['edit'], {relativeTo: this.route})
   }
 
-  deleteStudent(){
+  deleteStudent(reg:string){
+    this.studentService.deleteStudent(reg)
+
+    setTimeout(()=>{
+      this.router.navigate(['/students'])
+    })
   }
 
 }

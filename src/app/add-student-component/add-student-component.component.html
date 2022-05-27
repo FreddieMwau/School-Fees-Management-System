@@ -1,30 +1,44 @@
 <div class="container">
 
     <div class="card-design">
-        <!-- <div class="lottie-container">
-            <ng-lottie></ng-lottie>
-        </div> -->  
         <h3>Add a Student</h3>
-        <div *ngIf="isValid">
-            <p [style]="{color:'red'}">Please fill all inputs</p>
-        </div>
-        <div class="form-layout">
-            <label>Adm No.</label>
-            <input type="number" class="txt" #studentName>
-            <label>Name</label>
-            <input type="text" class="txt" #studentName>
-            <label>Email Address</label>
-            <input type="email" class="txt" #studentEmail>
-            <label>PhoneNumber</label>
-            <input type="number" class="txt" #studentPhoneNumber>
-            <label>School</label>
-            <input type="text" class="txt" #studentSchool>
-            <label>Course</label>
-            <input type="text" class="txt" #studentCourse>
+        <form [formGroup]="studentDetails" (ngSubmit)="onSubmit()">
+            <div class="form-layout">
+                <p *ngIf="msg" class="success">{{msg}}</p>
+                <label>Adm No.</label>
+                <input formControlName="regNo" type="text" class="txt form-group" #studentName>
+                <label>Name</label>
+                <input formControlName="studentName" type="text" class="txt form-group" #studentName>
+                <div class="contactInfo" formGroupName="contactInfo">
+                    <label class="edge">Email Address</label>
+                    <input formControlName="studentEmail" type="email" class="txt form-group">
+                    <span class="error" *ngIf="studentDetails.get('contactInfo.studentEmail')?.errors?.['required'] && studentDetails.get('contactInfo.studentEmail')?.touched">*
+                        Please enter an email address</span>
+                    <span class="error"
+                        *ngIf="studentDetails.get('contactInfo.studentEmail')!.errors?.['email'] && studentDetails.get('contactInfo.studentEmail')!.touched">*
+                        Please enter a valid email address</span>
+                    <label class="edge">PhoneNumber</label>
+                    <input formControlName="studentPhoneNumber" type="number" class="txt form-group" #studentPhoneNumber>
+                    <span class="error"
+                        *ngIf="studentDetails.get('contactInfo.studentPhoneNumber')!.errors?.['required'] && studentDetails.get('contactInfo.studentPhoneNumber')!.touched">*
+                        Please enter phone number</span>
+                    <span class="error"
+                        *ngIf="studentDetails.get('contactInfo.studentPhoneNumber')!.errors?.['maxLength'] && studentDetails.get('contactInfo.studentPhoneNumber')!.touched">*
+                        Max of 10 digits</span>
+                    <span class="error"
+                        *ngIf="studentDetails.get('contactInfo.studentPhoneNumber')!.errors?.['minLength'] && studentDetails.get('contactInfo.studentPhoneNumber')!.touched">*
+                        Must have 10 digits</span>
+                    
+                </div>
+                <label>School</label>
+                <input formControlName="studentSchool" type="text" class="txt form-group" #studentSchool>
+                <label>Course</label>
+                <input formControlName="studentCourse" type="text" class="txt form-group" #studentCourse>
             
-            <button class="btns"
-                (click)="addStudents(studentName.value, studentEmail.value, +studentPhoneNumber.value, studentSchool.value, studentCourse.value)">Add
-                Student</button>
-        </div>
+                <button class="btns" [disabled]="!studentDetails.valid">Add Student</button>
+            </div>
+        </form>
     </div>
 </div>
+<!-- (click)="addStudents(studentName.value, studentEmail.value, +studentPhoneNumber.value, studentSchool.value,
+studentCourse.value)" -->
