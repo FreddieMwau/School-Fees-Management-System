@@ -1,0 +1,96 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    justify-content: space-evenly;
+}
+
+.left-panel,
+.right-panel{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid chocolate;
+    padding: 5px;
+    margin-top: 35px;
+    border-radius: 9px;
+}
+
+h4{
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-left: 25px;   
+}
+
+span{
+    color: chocolate;
+    font-size: 35px;
+    margin-left: -5px;
+    margin-right: 20px;
+}
+
+p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    margin-left: 25px;
+    margin-top: 40px;
+}
+
+.lottie-container{
+    height: 300px;
+    width: 300px;
+    align-self: center;
+    margin-top: 20px;
+}
+
+h3{
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-left: 25px;
+}
+
+.inputs{
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    margin-top: 85px;
+}
+
+label{
+    color: dimgray;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+.txt {
+    padding: 8px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn{
+    width: 150px;
+    margin-top: 65px;
+    color: wheat;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: chocolate;
+    align-self: center;
+    cursor: pointer;
+}
+
+.btn:hover{
+    color: white;
+}

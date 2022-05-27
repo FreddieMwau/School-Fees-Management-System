@@ -1,0 +1,30 @@
+<div class="container">
+
+    <div class="card-design">
+        <!-- <div class="lottie-container">
+            <ng-lottie></ng-lottie>
+        </div> -->  
+        <h3>Add a Student</h3>
+        <div *ngIf="isValid">
+            <p [style]="{color:'red'}">Please fill all inputs</p>
+        </div>
+        <div class="form-layout">
+            <label>Adm No.</label>
+            <input type="number" class="txt" #studentName>
+            <label>Name</label>
+            <input type="text" class="txt" #studentName>
+            <label>Email Address</label>
+            <input type="email" class="txt" #studentEmail>
+            <label>PhoneNumber</label>
+            <input type="number" class="txt" #studentPhoneNumber>
+            <label>School</label>
+            <input type="text" class="txt" #studentSchool>
+            <label>Course</label>
+            <input type="text" class="txt" #studentCourse>
+            
+            <button class="btns"
+                (click)="addStudents(studentName.value, studentEmail.value, +studentPhoneNumber.value, studentSchool.value, studentCourse.value)">Add
+                Student</button>
+        </div>
+    </div>
+</div>

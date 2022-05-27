@@ -1,0 +1,43 @@
+.container{
+    display: flex;
+    background-color: whitesmoke;
+}
+
+.leftPanel{
+    border-right: 2px solid chocolate;
+    height: 45rem;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 23rem;
+    gap: 5px;
+}
+
+h4{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 19px;
+    margin-top: 15px;
+    margin-left: 10px;
+    color: dimgray;
+}
+
+.studentName{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid dimgray;
+    border-radius: 2px;
+    width: 85%;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.selected{
+    background-color: chocolate;
+    color: white;
+}

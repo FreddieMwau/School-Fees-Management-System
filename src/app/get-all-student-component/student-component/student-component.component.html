@@ -1,0 +1,38 @@
+<div *ngIf="student">
+    <div class="container">
+        <div class="card-design">
+            <div class="lottie-container">
+                <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+            </div>
+            <div class="values">
+                <label>Student Info</label>
+                <div class="layout">
+                    <img src="../../../assets/images/name.png" alt="">
+                    <h3>{{student.name}}</h3>
+                </div>
+                <div class="layout">
+                    <img src="../../../assets/images/mail.png" alt="">
+                    <p>{{student.email}}</p>
+                </div>
+                <div class="layout">
+                    <img src="../../../assets/images/phone.png" alt="">
+                    <p>{{student.phoneNo}}</p>
+                </div>
+                <div class="layout">
+                    <img src="../../../assets/images/schools.png" alt="">
+                    <p>{{student.school}}</p>
+                </div>
+                <div class="layout">
+                    <img src="../../../assets/images/course.png" alt="">
+                    <p>{{student.course}}</p>
+                </div>
+            
+                <div class="buttons">
+                    <button class="btn" (click)="editBalance()">Update Fee Balance</button>
+                    <button class="btn" (click)="deleteStudent()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -8,9 +8,9 @@
         <p [ngStyle]="{color:'forestgreen'}">{{successMsg}}</p>
 
         <div class="input-form">
-            <form class="form">
+            <form class="form" >
                 <label for="studentName">Student Name</label>
-                <input #studentNameInput name="studentName" type="text" placeholder="Student name">
+                <input #studentNameInput id="nameInput" name="studentName" type="text" placeholder="Student name">
                 <p [ngStyle]="{color:'red'}">{{errorMsg}}</p>
                 <label for="studentBalance">Student Balance</label>
                 <input type="number" name="studentBalance" placeholder="Ksh 0" #studentBalanceInput>
@@ -34,7 +34,7 @@
         <div class="output-container">
             <p id="noResults" *ngIf="students.length == 0">No Students !!!</p>
 
-            <div class="result" *ngFor="let student of newStudents">
+            <div class="result" *ngFor="let student of newStudents | sort">
                 <p>{{student.name | uppercase}}</p>
                 <p [ngStyle]="{color : student.feeBalance <= 0 ? 'green' : 'red'}">{{student.feeBalance}}</p>
             </div>

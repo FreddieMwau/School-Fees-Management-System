@@ -1,0 +1,62 @@
+
+.container{
+    background-color: whitesmoke;
+    width: 98vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+}
+
+.card-design{
+    display: flex;
+    flex-direction: column;
+    width: 55rem;
+    align-self: center;
+    background-color: white;
+    border-radius: 7px;
+}
+
+h3{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    margin-top: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: dimgrey;
+}
+
+.form-layout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+label{
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-size: 15px;
+    margin-left: 85px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.txt {
+    padding: 8px;
+    width: 45rem;
+    margin: 5px auto;
+}
+
+.btns{
+    padding: 6px;
+    background-color: chocolate;
+    color: wheat;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px auto;
+    cursor: pointer;
+    width: 200px;
+}
+
+.btns:hover{
+    color: white;
+}

@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="card-design">
+        <div class="lottie-container">
+            <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
+        </div>
+        <div class="values">
+            <h3>Edit Fees</h3>
+            <div *ngIf="isValid">
+                <p [style]="{color:'red'}">Use figures between 0-9</p>
+            </div>
+            <label class="balance">Fee Balance</label>
+            <input [(ngModel)]="studentBalance" type="number" class="txt">
+            
+            <button (click)="editBalance()" class="btn">Update Balance</button>
+        </div>
+    </div>
+</div>
