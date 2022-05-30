@@ -1,9 +1,12 @@
 export interface Student{
-    id:string
-    name:string
-    email:string
-    phoneNo:number
-    balance?:number
-    school:string
-    course:string
+    balance: number
+    contactInfo: {  
+    studentEmail: string
+    studentPhoneNumber:number
+    }
+
+    regNo: string
+    studentCourse: string
+    studentName: string
+    studentSchool: string
 }

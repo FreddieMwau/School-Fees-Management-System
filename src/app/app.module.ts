@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NavComponentComponent } from './nav-component/nav-component.component';
 import { BodyComponentComponent } from './body-component/body-component.component';
 import { FooterComponentComponent } from './footer-component/footer-component.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SortPipe } from './sort.pipe';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { AddStudentComponentComponent } from './add-student-component/add-student-component.component';
@@ -20,6 +20,7 @@ import { LottieModule } from 'ngx-lottie';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { authGuard } from './services/auth-guard.service';
 import { authService } from './services/auth.service';
+import { SelectStudentComponent } from './get-all-student-component/select-student/select-student.component';
 
 export function playerFactory(){
   return import('lottie-web');
@@ -39,11 +40,13 @@ export function playerFactory(){
     StudentComponentComponent,
     EditStudentComponentComponent,
     NotFoundComponent,
+    SelectStudentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     [LottieModule.forRoot({player: playerFactory})]
   ],

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { authService } from '../services/auth.service';
 
 @Component({
@@ -8,13 +9,16 @@ import { authService } from '../services/auth.service';
 })
 export class NavComponentComponent implements OnInit {
 
-  constructor(private authService: authService) { }
+  constructor(private authService: authService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   logOut(){
     this.authService.logOut()
+    setTimeout(()=>{
+      this.router.navigate([''])
+    }, 1000)
   }
 
 }

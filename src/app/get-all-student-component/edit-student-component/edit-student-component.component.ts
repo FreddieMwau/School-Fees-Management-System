@@ -14,17 +14,19 @@ export class EditStudentComponentComponent implements OnInit {
 
   isValid:boolean = false
   student?:Student
-  studentBalance?=0
+  regNo:string=''
+  balance=0
+  msg:string=''
   id!:string
 
   constructor(private studentService: StudentService, private router: Router, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params:Params) => {
-      this.id=params['id']
+      this.regNo = params['regNo']
       this.student = this.studentService.getStudent(this.id)
       if(this.student){
-        this.studentBalance = this.student.balance
+        this.balance = this.student.balance
       }
     })
   }
@@ -38,8 +40,22 @@ export class EditStudentComponentComponent implements OnInit {
     
   }
 
+
   editBalance(){
-    this.router.navigate(['balances'])
+    this.route.params.subscribe((params:Params)=> {
+      this.regNo= params['id']
+      console.log(this.regNo);
+      
+      this.studentService.updateStudentFee(this.regNo, this.balance)
+      console.log(this.balance);
+      
+      this.msg = 'Updated successfully'
+
+      setTimeout(()=>{
+        this.msg = ''
+        this.router.navigate(['/students'])
+      }, 2500)
+    })
   }
 
 }

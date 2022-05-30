@@ -76,3 +76,10 @@ h3 {
     margin-right: 10px;
     margin-top: 10px;
 }
+.success {
+    color: lime;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
+}

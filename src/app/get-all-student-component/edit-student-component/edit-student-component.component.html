@@ -4,12 +4,13 @@
             <ng-lottie [options]="options" (animationCreated)="animationCreated($event)"></ng-lottie>
         </div>
         <div class="values">
+            <p *ngIf="msg" class="success">{{msg}}</p>
             <h3>Edit Fees</h3>
             <div *ngIf="isValid">
                 <p [style]="{color:'red'}">Use figures between 0-9</p>
             </div>
             <label class="balance">Fee Balance</label>
-            <input [(ngModel)]="studentBalance" type="number" class="txt">
+            <input #studentBalance type="number" [(ngModel)]="balance" class="txt">
             
             <button (click)="editBalance()" class="btn">Update Balance</button>
         </div>

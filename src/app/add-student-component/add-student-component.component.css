@@ -30,6 +30,14 @@ h3{
     flex-direction: column;
     justify-content: center;
 }
+
+.success{
+    color: lime;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
 label{
     font-family: 'Courier New', Courier, monospace;
     color: black;
@@ -59,4 +67,27 @@ label{
 
 .btns:hover{
     color: white;
+}
+
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+
+input.ng-valid.ng-touched {
+    border: 2px solid green;
+}
+
+.contactInfo{
+    margin-left: 70px;
+}
+.edge{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.error{
+    font-size: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    color: red;
+    margin-left: 80px;
 }

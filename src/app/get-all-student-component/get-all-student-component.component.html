@@ -1,7 +1,8 @@
 <div class="container">
     <div class="leftPanel">
         <h4>Students List</h4>
-            <a routerLinkActive="selected" [routerLink]="['/students', student.id]" class="studentName" *ngFor="let student of students">{{student.name}}</a>
+            <a routerLinkActive="selected" [routerLink]="['/students', 
+            student.regNo]" *ngFor="let student of students">{{student.studentName}}</a>
     </div>
     <div class="rightPanel">
         <router-outlet></router-outlet>

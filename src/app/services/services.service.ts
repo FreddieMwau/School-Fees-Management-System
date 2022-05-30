@@ -8,60 +8,66 @@ import { v4 as uid } from "uuid";
 export class StudentService {
   private students: Student[] = [
     {
-      id: '1f9f3152-d141-4b46-a791-c3e25fd31f0e',
-      name: 'Jackson Ndolo',
-      email: 'ndolo@jackson.com',
-      phoneNo: 78799808880,
-      balance: 0,
-      school: 'Mwisho wa Mawazo Primary School',
-      course: 'UnderGraduate in Character Development with Information Technology '
-    },
-    {
-      id: '1f9f3152-d141-4b46-c893-c3e25fd31f0e',
-      name: 'Jackson Ndolo',
-      email: 'ndolo@jackson.com',
-      phoneNo: 78799808880,
-      balance: 9212,
-      school: 'Mwisho wa Mawazo Primary School',
-      course: 'UnderGraduate in Character Development with Information Technology '
-
-    },
-    {
-      id: '1f9f3152-d141-4b46-p123-c3e25fd31f0e',
-      name: 'Jackson Ndolo',
-      email: 'ndolo@jackson.com',
-      phoneNo: 78799808880,
+      regNo: '1f9f3152-d141-4b46-p123-c3e25fd31f0e',
+      studentName: 'Jackson Ndolo',
       balance: -2000,
-      school: 'Mwisho wa Mawazo Primary School',
-      course: 'UnderGraduate in Character Development with Information Technology '
+      studentSchool: 'Mwisho wa Mawazo Primary School',
+      studentCourse: 'UnderGraduate in Character Development with Information Technology ',
+      contactInfo: {
+        studentEmail: 'ndolo@jackson.com',
+        studentPhoneNumber: 78799808880,
+      }
 
     },
     {
-      id: '1f9f3152-d141-4b46-a932-c3e25fd31f0e',
-      name: 'Jackson Ndolo',
-      email: 'ndolo@jackson.com',
-      phoneNo: 78799808880,
-      balance: 9212,
-      school: 'Mwisho wa Mawazo Primary School',
-      course: 'UnderGraduate in Character Development with Information Technology '
+      regNo: '1f9f3152-d141-4b46-p12e3-c3e25fd31f0e',
+      studentName: 'Jackson Ndolo',
+      balance: -2000,
+      studentSchool: 'Mwisho wa Mawazo Primary School',
+      studentCourse: 'UnderGraduate in Character Development with Information Technology ',
+      contactInfo: {
+        studentEmail: 'ndolo@jackson.com',
+        studentPhoneNumber: 78799808880,
+      }
+
+    },
+    {
+      regNo: '1f9f3152-d141-4b46-p1e23-c3e25fd31f0e',
+      studentName: 'Jackson Ndolo',
+      balance: -2000,
+      studentSchool: 'Mwisho wa Mawazo Primary School',
+      studentCourse:'UnderGraduate in Character Development with Information Technology ',
+      contactInfo: {
+        studentEmail: 'ndolo@jackson.com',
+        studentPhoneNumber:  78799808880,
+      }
+
+    },
+    {
+      regNo: '1f9f3152-d141-4eb46-p123-c3e25fd31f0e',
+      studentName: 'Jackson Ndolo',
+      balance: -2000,
+      studentSchool: 'Mwisho wa Mawazo Primary School',
+      studentCourse: 'UnderGraduate in Character Development with Information Technology ',
+      contactInfo: {
+        studentEmail: 'ndolo@jackson.com',
+        studentPhoneNumber: 78799808880,
+      }
 
     },
   ]
   constructor() { }
 
-  addStudent(name: string, email: string, phoneNo: number, school: string, course: string) {
-    this.students.push({
-      id: uid(),
-      name, email, phoneNo, school, course
-    })
+  addStudent(student:Student){
+    this.students.push(student)
   }
 
   getAllStudents() {
     return this.students;
   }
 
-  getStudent(id: string) {
-    return this.students.find(student => student.id === id)
+  getStudent(regNo: string) {
+    return this.students.find(student => student.regNo === regNo)
   }
 
   getStudentsWithBalance() {
@@ -72,14 +78,20 @@ export class StudentService {
     return this.students.filter(student => student.balance! <= 0)
   }
 
-  deleteStudent(id: string) {
-    const index = this.students.findIndex(student => student.id === id)
+  deleteStudent(regNo: string) {
+    const index = this.students.findIndex(student => student.regNo === regNo)
     return this.students.splice(index, 1)
   }
 
-  updateStudentFee(id: string, newBalance: number) {
-    const student = this.getStudent(id)
-    if (student) {
+  updateStudentFee(regNo: string, newBalance: number) {    
+    // return this.students.find(student =>{
+    //   student.regNo === regNo
+    //   // this.getStudent(regNo)
+    //   student.balance = newBalance
+    // })
+    const student = this.getStudent(regNo)
+    if(student){
+      // student!.balance = newBalance
       student.balance = newBalance
     }
   }
