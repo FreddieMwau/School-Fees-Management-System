@@ -15,7 +15,7 @@ export class EditStudentComponentComponent implements OnInit {
   isValid:boolean = false
   student?:Student
   regNo:string=''
-  balance?=0
+  balance=0
   msg:string=''
   id!:string
 
@@ -40,16 +40,21 @@ export class EditStudentComponentComponent implements OnInit {
     
   }
 
-  editBalance(balance:string){
-    const feeBalance = parseInt(balance)
-    console.log(feeBalance);
-    
-    this.studentService.updateStudentFee(this.regNo, feeBalance)
-    this.msg = "Fees balance updated successfully"
 
-    setTimeout(() => {
-      this.msg=''
-      this.router.navigate(['../'], {relativeTo: this.route})
+  editBalance(){
+    this.route.params.subscribe((params:Params)=> {
+      this.regNo= params['id']
+      console.log(this.regNo);
+      
+      this.studentService.updateStudentFee(this.regNo, this.balance)
+      console.log(this.balance);
+      
+      this.msg = 'Updated successfully'
+
+      setTimeout(()=>{
+        this.msg = ''
+        this.router.navigate(['/students'])
+      }, 2500)
     })
   }
 

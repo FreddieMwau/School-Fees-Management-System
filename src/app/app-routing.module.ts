@@ -5,6 +5,7 @@ import { BalanceComponentComponent } from './balance-component/balance-component
 import { ClearedComponentComponent } from './cleared-component/cleared-component.component';
 import { EditStudentComponentComponent } from './get-all-student-component/edit-student-component/edit-student-component.component';
 import { GetAllStudentComponentComponent } from './get-all-student-component/get-all-student-component.component';
+import { SelectStudentComponent } from './get-all-student-component/select-student/select-student.component';
 import { StudentComponentComponent } from './get-all-student-component/student-component/student-component.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
     canActivate: [authGuard], 
     component: GetAllStudentComponentComponent, 
     children: [
+      {path:'', canActivateChild: [authGuard], component: SelectStudentComponent},
       { path: ':id', canActivateChild: [authGuard] , component: StudentComponentComponent },
       { path: ':id/edit', canActivateChild: [authGuard], component: EditStudentComponentComponent },
     ]},

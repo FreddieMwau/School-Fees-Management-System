@@ -20,6 +20,7 @@ import { LottieModule } from 'ngx-lottie';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { authGuard } from './services/auth-guard.service';
 import { authService } from './services/auth.service';
+import { SelectStudentComponent } from './get-all-student-component/select-student/select-student.component';
 
 export function playerFactory(){
   return import('lottie-web');
@@ -39,6 +40,7 @@ export function playerFactory(){
     StudentComponentComponent,
     EditStudentComponentComponent,
     NotFoundComponent,
+    SelectStudentComponent,
   ],
   imports: [
     BrowserModule,

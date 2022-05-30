@@ -90,6 +90,9 @@ export class StudentService {
     //   student.balance = newBalance
     // })
     const student = this.getStudent(regNo)
-    return student!.balance = newBalance
+    if(student){
+      // student!.balance = newBalance
+      student.balance = newBalance
+    }
   }
 }
