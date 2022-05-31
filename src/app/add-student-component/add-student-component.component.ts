@@ -24,7 +24,7 @@ export class AddStudentComponentComponent implements OnInit {
       studentCourse: new FormControl('', Validators.required),
       balance: new FormControl(0),
       contactInfo: new FormGroup({
-        studentEmail: new FormControl('', [Validators.required, Validators.email]),
+        studentEmail: new FormControl('', [Validators.required, Validators.email, Validators.pattern(/^[a-z]+@thejitu.com$/)]),
         studentPhoneNumber: new FormControl('', [Validators.required,Validators.pattern(/^[0-9]\d*$/), Validators.maxLength(10), Validators.minLength(10)]),
       })
     })

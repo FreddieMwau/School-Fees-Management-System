@@ -15,6 +15,9 @@
                     <span class="error" *ngIf="studentDetails.get('contactInfo.studentEmail')?.errors?.['required'] && studentDetails.get('contactInfo.studentEmail')?.touched">*
                         Please enter an email address</span>
                     <span class="error"
+                        *ngIf="studentDetails.get('contactInfo.studentEmail')?.errors?.['pattern'] && studentDetails.get('contactInfo.studentEmail')?.touched">*
+                        Please enter a school email</span>
+                    <span class="error"
                         *ngIf="studentDetails.get('contactInfo.studentEmail')!.errors?.['email'] && studentDetails.get('contactInfo.studentEmail')!.touched">*
                         Please enter a valid email address</span>
                     <label class="edge">PhoneNumber</label>
